@@ -10,5 +10,5 @@
 from qtpy.QtWidgets import QWidget
 
 class {{ cookiecutter.plugin_name.replace(' ', '') }}Widget(QWidget):
-    """{{ cookiecutter.plugin_name.replace(' ', '') }} widget"""
+    """{{ cookiecutter.plugin_name }} widget."""
     pass
