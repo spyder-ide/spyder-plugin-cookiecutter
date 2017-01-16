@@ -1,4 +1,4 @@
-# https://circleci.com/gh/{{ cookiecutter.repo_org }}/{{ cookie cutter.repo_name }}
+# https://circleci.com/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}
 
 machine:
   environment:
@@ -43,11 +43,11 @@ dependencies:
 test:
   override:
     # Check Python style
-    - $CMD_LINT_CIOCHECK {{ cookie cutter.repo_name }} -dt: # note the colon
+    - $CMD_LINT_CIOCHECK {{ cookiecutter.repo_name }} -dt: # note the colon
         parallel: true
 
     # Run Python tests
-    - $CMD_TEST_PYTEST {{ cookie cutter.repo_name }} --cov={{ cookie cutter.repo_name }}: # note the colon        parallel: true
+    - $CMD_TEST_PYTEST {{ cookiecutter.repo_name }} --cov={{ cookiecutter.repo_name }}: # note the colon        parallel: true
 
     # Python coverage and post it to coveralls.io
     - $CMD_TEST_COVERALLS:

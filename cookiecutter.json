@@ -1,0 +1,11 @@
+{
+  "author": "Spyder Project Contributors",
+  "email": "admin@spyder-ide.org",
+  "github_username": "spyder-ide",
+  "plugin_name": "Demo Plugin",
+  "repo_name": "spyder-{{ cookiecutter.plugin_name.lower().replace(' ', '-')}}",
+  "project_name": "{{ cookiecutter.repo_name.replace('-', '_') }}",
+  "description": "Plugin for Spyder IDE.",
+  "version": "0.1.0",
+  "create_config_page": "n"
+}
