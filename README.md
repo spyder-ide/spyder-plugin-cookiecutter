@@ -30,12 +30,5 @@ repo_name [spyder-reports]:
 project_name [spyder_reports]:
 description [Plugin for Spyder IDE.]: Spyder Plugin for Markdown reports for Pweave and Stitc
 version [0.1.0]:
-Select open_source_license:
-1 - MIT license
-2 - BSD license
-3 - ISC license
-4 - Apache Software License 2.0
-5 - GNU General Public License v3
-6 - Not open source
-Choose from 1, 2, 3, 4, 5, 6 [1]:
+create_config_page [n]:
 ```
