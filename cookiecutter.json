@@ -5,6 +5,6 @@
   "plugin_name": "Demo Plugin",
   "repo_name": "spyder-{{ cookiecutter.plugin_name.lower().replace(' ', '-')}}",
   "project_name": "{{ cookiecutter.repo_name.replace('-', '_') }}",
-  "project_short_description": "Plugin for Spyder IDE.",
+  "description": "Plugin for Spyder IDE.",
   "version": "0.1.0",
 }
