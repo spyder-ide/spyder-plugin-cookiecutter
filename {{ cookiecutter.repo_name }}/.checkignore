@@ -1,0 +1,7 @@
+# Quantified code ignore file
+# ---------------------------
+# https://docs.quantifiedcode.com/configuration/config_checkignore.html
+
+# Ignore folder content
+test/*
+tests/*
