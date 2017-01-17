@@ -52,7 +52,7 @@ setup(
 {% else %}
     version=get_version(),
 {% endif %}
-    keywords=[""],
+    keywords=['Spyder', 'Plugin'],
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_username }}',
     license='MIT',
     author='{{ cookiecutter.author }}',
