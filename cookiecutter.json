@@ -8,5 +8,6 @@
   "description": "Plugin for Spyder IDE.",
   "version": "0.1.0",
   "create_config_page": "n",
-  "use_ciocheck": "y"
+  "use_ciocheck": "y",
+  "support_python_2": "n"
 }
