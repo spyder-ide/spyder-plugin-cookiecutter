@@ -9,7 +9,9 @@ Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter), Spyder Plugi
 
 First, get Cookiecutter:
 
+```
 $ pip install "cookiecutter>=1.4.0"
+```
 
 Now run against the repo:
 
@@ -31,4 +33,5 @@ project_name [spyder_reports]:
 description [Plugin for Spyder IDE.]: Spyder Plugin for Markdown reports for Pweave and Stitc
 version [0.1.0]:
 create_config_page [n]:
+use_ciocheck [y]:
 ```

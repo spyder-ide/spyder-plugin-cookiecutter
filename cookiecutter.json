@@ -7,5 +7,6 @@
   "project_name": "{{ cookiecutter.repo_name.replace('-', '_') }}",
   "description": "Plugin for Spyder IDE.",
   "version": "0.1.0",
-  "create_config_page": "n"
+  "create_config_page": "n",
+  "use_ciocheck": "y"
 }
