@@ -2,3 +2,8 @@ include CHANGELOG.md
 include CONTRIBUTORS.md
 include LICENSE.txt
 include README.rst
+
+{%- if cookiecutter.use_versioneer == 'y' %}
+include versioneer.py
+include {{ cookiecutter.project_name }}/_version.py
+{%- endif %}
