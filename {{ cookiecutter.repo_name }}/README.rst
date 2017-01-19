@@ -3,7 +3,7 @@
 ## Installation
 
 
-{{ cookiecutter.project_name }}
+{{ cookiecutter.plugin_name }}
 ======
 
 Build status
