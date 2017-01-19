@@ -19,9 +19,16 @@ dependencies:
       source ci-helpers/travis/setup_conda_$TRAVIS_OS_NAME.sh &&
       export PATH="$HOME/miniconda/bin:$PATH" &&
       source activate test &&
-      conda install pytest &&
+      conda install pytest cookiecutter -c conda-forge &&
+      conda install pytest entrypoints -c conda-forge &&
       conda install pytest-cookies -c conda-forge &&
+      conda install versioneer -c conda-forge &&
       conda install ciocheck -c conda-forge;
+    - export PATH="$HOME/miniconda/bin:$PATH" && source activate test &&
+      cd .. &&
+      cookiecutter spyder-plugin-cookiecutter --no-input &&
+      cd spyder-demo-plugin &&
+      python setup.py develop;
 
 test:
   override:
