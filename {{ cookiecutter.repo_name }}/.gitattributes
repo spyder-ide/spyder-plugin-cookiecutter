@@ -3,3 +3,7 @@
 meta.yaml text eol=lf
 build.sh text eol=lf
 bld.bat text eol=crlf
+
+{%- if cookiecutter.use_versioneer == 'y' %}
+{{ cookiecutter.project_name }}/_version.py export-subst
+{%- endif %}
