@@ -35,3 +35,17 @@ version [0.1.0]:
 create_config_page [n]:
 use_ciocheck [y]:
 ```
+
+## Testing
+
+For testing you need to install pytest and pytest-cookies
+
+```
+$ pip install pytest pytest-cookies
+```
+
+And run pytest:
+
+```
+$ pytest
+```
