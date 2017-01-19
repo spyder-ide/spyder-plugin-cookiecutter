@@ -1,1 +1,1 @@
-{{ cookiecutter.author }}
+{{ cookiecutter.author }} (@{{ cookiecutter.github_username }})
