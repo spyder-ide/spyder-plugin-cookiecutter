@@ -1,5 +1,7 @@
 # Spyder Plugin Cookiecutter
 
+[![CircleCI](https://circleci.com/gh/spyder-ide/spyder-plugin-cookiecutter.svg?style=svg)](https://circleci.com/gh/spyder-ide/spyder-plugin-cookiecutter)
+
 Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter), Spyder Plugin Cookiecutter is a template for jumpstarting Spyder IDE plugins quickly.
 
 ## Features
