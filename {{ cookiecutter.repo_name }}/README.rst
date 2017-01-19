@@ -60,7 +60,7 @@ Using conda
 
 ::
 
-conda install {{ cookiecutter.project_name }} -c conda-forge
+conda install {{ cookiecutter.project_name }} -c spyder-ide
 
 Usage
 -----
