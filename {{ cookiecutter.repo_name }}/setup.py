@@ -13,13 +13,14 @@ import os
 
 # Third party imports
 from setuptools import find_packages, setup
-{% if cookiecutter.use_versioneer == 'y' %}
+{%- if cookiecutter.use_versioneer == 'y' %}
 import versioneer
-{% endif %}
+{%- endif %}
+
 
 HERE = os.path.abspath(os.path.dirname(__file__))
 
-{% if cookiecutter.use_versioneer == 'n' %}
+{%- if cookiecutter.use_versioneer == 'n' %}
 def get_version(module='{{ cookiecutter.project_name }}'):
     """Get version."""
     with open(os.path.join(HERE, module, '__init__.py'), 'r') as f:
@@ -31,8 +32,7 @@ def get_version(module='{{ cookiecutter.project_name }}'):
             version = '.'.join(map(str, version_tuple))
             break
     return version
-
-{% endif %}
+{%- endif %}
 
 def get_description():
     """Get long description."""
@@ -46,12 +46,12 @@ REQUIREMENTS = ['spyder']
 
 setup(
     name='{{ cookiecutter.project_name }}',
-{% if cookiecutter.use_versioneer == 'y' %}
+{%- if cookiecutter.use_versioneer == 'y' %}
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
-{% else %}
+{%- else %}
     version=get_version(),
-{% endif %}
+{%- endif %}
     keywords=['Spyder', 'Plugin'],
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_username }}',
     license='MIT',
@@ -69,9 +69,9 @@ setup(
         'Operating System :: MacOS',
         'Operating System :: Microsoft :: Windows',
         'Operating System :: POSIX :: Linux',
-        {% if cookiecutter.support_python_2 == 'y' %}
+{%- if cookiecutter.support_python_2 == 'y' %}
         'Programming Language :: Python :: 2.7',
-        {% endif %}
+{%- endif %}
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6'
     ])
