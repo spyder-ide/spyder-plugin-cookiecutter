@@ -4,6 +4,8 @@
 
 Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter), Spyder Plugin Cookiecutter is a template for jumpstarting Spyder IDE plugins quickly.
 
+> This is under development, you can use it, but some features are missing
+
 ## Features
 
 - For Spyder >=3.1
