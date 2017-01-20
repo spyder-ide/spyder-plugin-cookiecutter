@@ -6,6 +6,37 @@ Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter), Spyder Plugi
 
 ## Features
 
+- For Spyder >=3.1
+- Spyder Plugin Structure (plugin.py, gui.py)
+- A functional basic plugin [under development]
+
+### Repo structure
+- Licence, Manifiest, Contibutors, .gitatributes
+- Readme with bagdes and some instructions.
+
+### Packaging
+
+- requierements.txt
+- conda recipe [under development]
+- setup.py
+
+### Continuous Integration
+
+- appveyor [under development]
+- travis [under development]
+- circle-ci [under development]
+
+### Code Checking
+
+- coverage [under development]
+- ciocheck [under development]
+- scrutinizer [under development]
+- quantified code [under development]
+
+### Repo Managing
+
+- versionner
+
 
 ## Usage
 
