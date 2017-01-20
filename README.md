@@ -6,6 +6,8 @@ Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter), Spyder Plugi
 
 > This is under development, you can use it, but some features are missing
 
+> We recommend using conda and anaconda when developing a Spyder-IDE plugin.
+
 ## Features
 
 - For Spyder >=3.1
