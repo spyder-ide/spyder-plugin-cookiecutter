@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/spyder-ide/spyder-plugin-cookiecutter.svg?style=svg)](https://circleci.com/gh/spyder-ide/spyder-plugin-cookiecutter)
 
-Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter), Spyder Plugin Cookiecutter is a template for jumpstarting Spyder IDE plugins quickly.
+Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter), Spyder Plugin Cookiecutter is a template for jumpstarting [Spyder IDE](https://github.com/spyder-ide/spyder) plugins quickly.
 
 > This is under development, you can use it, but some features are missing
 
@@ -45,7 +45,13 @@ Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter), Spyder Plugi
 First, get Cookiecutter:
 
 ```
-$ pip install "cookiecutter>=1.4.0"
+$ conda install "cookiecutter>=1.4.0"
+```
+
+If you want to use versioneer: (also you need to install git)
+
+```
+$ conda install versioneer
 ```
 
 Now run against the repo:
@@ -54,7 +60,9 @@ Now run against the repo:
 $ cookiecutter https://github.com/spyder-ide/spyder-plugin-cookiecutter
 ```
 
-You'll be prompted for some values.
+You'll be prompted for some values. and after that the repo will be generated
+
+Normally you don't need to change `project_name` and `repo_name`.
 
 Example:
 
@@ -69,6 +77,8 @@ description [Plugin for Spyder IDE.]: Spyder Plugin for Markdown reports for Pwe
 version [0.1.0]:
 create_config_page [n]:
 use_ciocheck [y]:
+support_python_2 [n]:
+use_versioneer [y]:
 ```
 
 ## Testing
