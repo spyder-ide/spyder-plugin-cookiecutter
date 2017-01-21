@@ -59,7 +59,7 @@ $ conda install versioneer
 Now run against the repo:
 
 ```
-$ cookiecutter https://github.com/spyder-ide/spyder-plugin-cookiecutter
+$ cookiecutter gh:spyder-ide/spyder-plugin-cookiecutter
 ```
 
 You'll be prompted for some values. and after that the repo will be generated
