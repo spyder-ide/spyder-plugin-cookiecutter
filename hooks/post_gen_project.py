@@ -27,14 +27,24 @@ def remove_version_file():
 def install_versioneer():
     """Start versioneer in the repository, this will create
     versioneer.py and _version.py."""
-    call(['versioneer', 'install'])
+    try:
+        call(['versioneer', 'install'])
+    except Exception:
+        print(
+            "versioneer isn't avalaible, please install versioneer and run:\n  $ versioneer install")
+
+def init_git():
+    """Start git repository"""
+    try:
+        call(['git', 'init'])
+    except Exception:
+        print("git isn't avalaible, please install git and run:\n  $ git init")
+
 
 # 1. Removes _version file and run versionner install if use_versionner == y
 
 if '{{ cookiecutter.use_versioneer }}'.lower() == 'y':
     remove_version_file()
-    try:
-        install_versioneer()
-    except Exception:
-        print(
-            "versioneer isn't avalaible, please install versioneer and run:\n  $ versioneer install")
+
+    init_git()
+    install_versioneer()
