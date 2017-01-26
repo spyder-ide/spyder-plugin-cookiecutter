@@ -6,9 +6,9 @@
 inherit_config = .ciocheck
 branch = origin/master
 diff_mode = commited
-file_mode = lines
+file_mode = all
 check = pep8,pydocstyle,flake8,pylint,pyformat,isort,autopep8,yapf,coverage,pytest
-enforce = pep8,pydocstyle,flake8,pylint,pyformat,isort,autopep8,yapf,coverage,pytest
+enforce =flake8,isort,yapf
 
 # Python (pyformat)
 header = # -*- coding: utf-8 -*-
