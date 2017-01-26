@@ -19,7 +19,7 @@ dependencies:
       source ci-helpers/travis/setup_conda_$TRAVIS_OS_NAME.sh &&
       export PATH="$HOME/miniconda/bin:$PATH" &&
       source activate test &&
-      conda install --file requirements.txt -c conda-forge;
+      conda install --file requirements.txt -c spyder-ide;
     - export PATH="$HOME/miniconda/bin:$PATH" && source activate test &&
       cd .. &&
       cookiecutter spyder-plugin-cookiecutter --no-input &&
