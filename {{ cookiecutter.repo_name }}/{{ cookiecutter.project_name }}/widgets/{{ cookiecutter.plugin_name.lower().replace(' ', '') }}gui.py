@@ -11,4 +11,7 @@ from qtpy.QtWidgets import QWidget
 
 class {{ cookiecutter.plugin_name.replace(' ', '') }}Widget(QWidget):
     """{{ cookiecutter.plugin_name }} widget."""
-    pass
+    def __init__(self, parent):
+        QWidget.__init__(self, parent)
+
+        self.setWindowTitle("{{ cookiecutter.plugin_name }}")
