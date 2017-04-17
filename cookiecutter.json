@@ -2,7 +2,7 @@
   "author": "Spyder Project Contributors",
   "email": "admin@spyder-ide.org",
   "github_username": "spyder-ide",
-  "plugin_name": "Demo Plugin",
+  "plugin_name": "Demo",
   "repo_name": "spyder-{{ cookiecutter.plugin_name.lower().replace(' ', '-')}}",
   "project_name": "{{ cookiecutter.repo_name.replace('-', '_') }}",
   "description": "Plugin for Spyder IDE.",
