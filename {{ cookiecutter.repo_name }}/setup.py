@@ -23,11 +23,11 @@ HERE = os.path.abspath(os.path.dirname(__file__))
 {%- if cookiecutter.use_versioneer == 'n' %}
 def get_version(module='{{ cookiecutter.project_name }}'):
     """Get version."""
-    with open(os.path.join(HERE, module, '__init__.py'), 'r') as f:
+    with open(os.path.join(HERE, module, '_version.py'), 'r') as f:
         data = f.read()
     lines = data.split('\n')
     for line in lines:
-        if line.startswith('VERSION_INFO'):
+        if line.startswith('version_info'):
             version_tuple = ast.literal_eval(line.split('=')[-1].strip())
             version = '.'.join(map(str, version_tuple))
             break
