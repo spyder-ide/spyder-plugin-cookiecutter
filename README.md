@@ -39,7 +39,7 @@ Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter), Spyder Plugi
 
 ### Repo Managing
 
-- versionner
+- versioneer
 
 
 ## Usage
