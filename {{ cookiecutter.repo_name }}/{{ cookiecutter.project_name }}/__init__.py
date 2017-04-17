@@ -16,3 +16,9 @@ del get_versions
 {%- else %}
 from ._version import __version__
 {%- endif %}
+
+# The following statements are required to register this 3rd party plugin:
+
+from .{{ cookiecutter.plugin_name.lower().replace(' ', '') }}plugin import {{ cookiecutter.plugin_name.replace(' ', '') }}Plugin
+
+PLUGIN_CLASS = {{ cookiecutter.plugin_name.replace(' ', '') }}Plugin
