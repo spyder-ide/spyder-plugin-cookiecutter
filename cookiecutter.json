@@ -2,7 +2,7 @@
   "author": "Spyder Project Contributors",
   "email": "admin@spyder-ide.org",
   "github_username": "spyder-ide",
-  "plugin_name": "Demo Plugin",
+  "plugin_name": "Demo",
   "repo_name": "spyder-{{ cookiecutter.plugin_name.lower().replace(' ', '-')}}",
   "project_name": "{{ cookiecutter.repo_name.replace('-', '_') }}",
   "description": "Plugin for Spyder IDE.",
@@ -10,5 +10,6 @@
   "create_config_page": "n",
   "use_ciocheck": "y",
   "support_python_2": "n",
-  "use_versioneer": "y"
+  "spyder3_compatibility": "y",
+  "use_versioneer": "n"
 }

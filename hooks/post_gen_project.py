@@ -1,7 +1,7 @@
 """
 Does the following:
 
-1. Removes _version file and run versionner install if use_versionner == y
+1. Removes _version file and run versioneer install if use_versioneer == y
 """
 
 from __future__ import print_function
@@ -18,7 +18,7 @@ def remove_file(file_name):
 
 
 def remove_version_file():
-    """Removes the _version file if versionner is going to be used."""
+    """Removes the _version file if versioneer is going to be used."""
     file_name = os.path.join(PROJECT_DIRECTORY,
                              '{{ cookiecutter.project_name }}/_version.py')
     remove_file(file_name)
@@ -41,7 +41,7 @@ def init_git():
         print("git isn't avalaible, please install git and run:\n  $ git init")
 
 
-# 1. Removes _version file and run versionner install if use_versionner == y
+# 1. Removes _version file and run versioneer install if use_versioneer == y
 
 if '{{ cookiecutter.use_versioneer }}'.lower() == 'y':
     remove_version_file()

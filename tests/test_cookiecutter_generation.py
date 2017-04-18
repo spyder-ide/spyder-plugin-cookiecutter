@@ -9,9 +9,9 @@ def context():
         'author': 'Spyder Project Contributors',
         'email': 'admin@spyder-ide.org',
         'github_username': 'spyder-ide',
-        'plugin_name': 'Demo Plugin',
-        'repo_name': 'spyder-demo-plugin',
-        'project_name': 'spyder_demo_plugin',
+        'plugin_name': 'Demo',
+        'repo_name': 'spyder-demo',
+        'project_name': 'spyder_demo',
         'description': 'Plugin for Spyder IDE.',
         'version': '0.1.0',
     }

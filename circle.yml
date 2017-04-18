@@ -23,11 +23,11 @@ dependencies:
     - export PATH="$HOME/miniconda/bin:$PATH" && source activate test &&
       cd .. &&
       cookiecutter spyder-plugin-cookiecutter --no-input &&
-      cd spyder-demo-plugin &&
-      python setup.py develop;
+      cd spyder-demo &&
+      python setup.py develop --no-deps;
     - export PATH="$HOME/miniconda/bin:$PATH" && source activate test &&
       cd .. &&
-      ciocheck spyder-demo-plugin;
+      ciocheck spyder-demo;
 
 test:
   override:
