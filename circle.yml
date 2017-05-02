@@ -1,4 +1,4 @@
-# https://circleci.com/gh/spyder-ide/loghub
+# https://circleci.com/gh/spyder-ide/spyder-plugin-cookiecutter
 
 machine:
   environment:
