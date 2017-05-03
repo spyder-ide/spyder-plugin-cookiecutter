@@ -12,7 +12,7 @@ Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter), Spyder Plugi
 
 - For Spyder >=3.1
 - Spyder Plugin Structure (plugin.py, gui.py)
-- A functional basic plugin [under development]
+- A functional basic plugin
 
 ### Repo structure
 - Licence, Manifiest, Contibutors, .gitatributes
@@ -26,16 +26,17 @@ Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter), Spyder Plugi
 
 ### Continuous Integration
 
+- pytest configuration, and a basic test
 - appveyor [under development]
 - travis [under development]
-- circle-ci [under development]
+- circle-ci
 
 ### Code Checking
 
-- coverage [under development]
-- ciocheck [under development]
-- scrutinizer [under development]
-- quantified code [under development]
+- coverage
+- ciocheck
+- scrutinizer
+- quantified code
 
 ### Repo Managing
 
