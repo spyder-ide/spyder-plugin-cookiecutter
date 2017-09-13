@@ -58,5 +58,13 @@ if '{{ cookiecutter.use_versioneer }}'.lower() == 'y':
 old_gitattributes = os.path.join(PROJECT_DIRECTORY, 'gitattributes')
 new_gitattributes = os.path.join(PROJECT_DIRECTORY, '.gitattributes')
 
-
 os.rename(old_gitattributes, new_gitattributes)
+
+
+# 3. Create empty assets directory
+
+assets_dir = os.path.join(PROJECT_DIRECTORY,
+                          '{{ cookiecutter.project_name }}',
+                          'assets')
+
+os.mkdir(assets_dir)
