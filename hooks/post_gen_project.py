@@ -20,7 +20,8 @@ def remove_file(file_name):
 def remove_version_file():
     """Removes the _version file if versioneer is going to be used."""
     file_name = os.path.join(PROJECT_DIRECTORY,
-                             '{{ cookiecutter.project_name }}/_version.py')
+                             '{{ cookiecutter.project_name }}',
+                             '_version.py')
     remove_file(file_name)
 
 
