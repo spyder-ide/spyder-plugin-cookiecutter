@@ -45,7 +45,7 @@ REQUIREMENTS = ['spyder']
 
 
 setup(
-    name='{{ cookiecutter.project_name }}',
+    name='{{ cookiecutter.repo_name }}',
 {%- if cookiecutter.use_versioneer == 'y' %}
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
@@ -53,7 +53,7 @@ setup(
     version=get_version(),
 {%- endif %}
     keywords=['Spyder', 'Plugin'],
-    url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_username }}',
+    url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}',
     license='MIT',
     author='{{ cookiecutter.author }}',
     author_email='{{ cookiecutter.email }}',
@@ -61,6 +61,7 @@ setup(
     long_description=get_description(),
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     install_requires=REQUIREMENTS,
+    include_package_data=True,
     classifiers=[
         'Development Status :: 1 - Planning',
         'Intended Audience :: Developers',

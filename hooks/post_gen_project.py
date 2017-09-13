@@ -20,7 +20,8 @@ def remove_file(file_name):
 def remove_version_file():
     """Removes the _version file if versioneer is going to be used."""
     file_name = os.path.join(PROJECT_DIRECTORY,
-                             '{{ cookiecutter.project_name }}/_version.py')
+                             '{{ cookiecutter.project_name }}',
+                             '_version.py')
     remove_file(file_name)
 
 
@@ -48,3 +49,14 @@ if '{{ cookiecutter.use_versioneer }}'.lower() == 'y':
 
     init_git()
     install_versioneer()
+
+
+# 2. Moves gitattributes to .gitattributes
+# Having a .gitattributes with wrong syntax (because it has some jinja syntax)
+# cause some annoying warnings
+
+old_gitattributes = os.path.join(PROJECT_DIRECTORY, 'gitattributes')
+new_gitattributes = os.path.join(PROJECT_DIRECTORY, '.gitattributes')
+
+
+os.rename(old_gitattributes, new_gitattributes)

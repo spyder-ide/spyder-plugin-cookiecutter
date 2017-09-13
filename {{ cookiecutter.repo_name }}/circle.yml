@@ -1,11 +1,12 @@
 # https://circleci.com/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}
 
+# NOTE: Don't forget to add COVERALLS_REPO_TOKEN in Circle-CI private env variables.
+# https://circleci.com/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}/edit#env-vars
+
 machine:
   environment:
     # Python versions to tests (Maximum of 4 different versions)
     PY_VERSIONS:  "3.6 3.5 {% if cookiecutter.support_python_2 == 'y' %}2.7{% endif %}"
-    # For Coveralls
-    COVERALLS_REPO_TOKEN: CHANGE_MEEEE!!
     # Environment variables used by astropy helpers
     TRAVIS_OS_NAME: "linux"
     CONDA_DEPENDENCIES_FLAGS: "--quiet"
