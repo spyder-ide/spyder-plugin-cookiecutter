@@ -65,6 +65,10 @@ class {{ cookiecutter.plugin_name.replace(' ', '') }}Plugin(SpyderPluginWidget):
         """Return widget title."""
         return "{{ cookiecutter.plugin_name }}"
 
+    def get_focus_widget(self):
+        """Return the widget to give focus to."""
+        return self.widget
+
     def refresh_plugin(self):
         """Refresh {{ widget_name }} widget."""
         pass
