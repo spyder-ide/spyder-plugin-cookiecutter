@@ -24,6 +24,8 @@ def test_default_configuration(cookies, context):
     assert result.project.basename == context['repo_name']
     assert result.project.isdir()
 
+    # Test creation of project files
+
     toplevel_files = ['.github', 'conda.recipe', 'CHANGELOG.md',
                       'CONTRIBUTORS.md', 'LICENSE.txt', 'MANIFEST.in',
                       'README.rst', 'RELEASE.md', 'setup.py',
@@ -33,3 +35,14 @@ def test_default_configuration(cookies, context):
 
     for path in toplevel_files:
         assert path in found_toplevel_files
+
+    # Test creation of plugin files
+
+    project_files = ['widgets', 'assets', 'demoplugin.py', '_version.py',
+                     '__init__.py', 'tests']
+
+    project_dir = result.project.join(context['project_name'])
+    found_project_files = [f.basename for f in project_dir.listdir()]
+
+    for path in project_files:
+        assert path in found_project_files
