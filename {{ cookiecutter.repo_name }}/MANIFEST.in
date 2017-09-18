@@ -2,6 +2,7 @@ include CHANGELOG.md
 include CONTRIBUTORS.md
 include LICENSE.txt
 include README.rst
+recursive-include assets/*
 
 {%- if cookiecutter.use_versioneer == 'y' %}
 include versioneer.py

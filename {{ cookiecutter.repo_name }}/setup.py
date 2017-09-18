@@ -62,6 +62,7 @@ setup(
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     install_requires=REQUIREMENTS,
     include_package_data=True,
+    package_data={'assets':['*']},
     classifiers=[
         'Development Status :: 1 - Planning',
         'Intended Audience :: Developers',
