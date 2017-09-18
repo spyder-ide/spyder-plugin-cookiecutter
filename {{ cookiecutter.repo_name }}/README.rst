@@ -3,7 +3,7 @@
 
 Build status
 ------------
-|travis status| |appveyor status| |circleci status| |coverage| |quantified code| |scrutinizer|
+|travis status| |appveyor status| |circleci status| |coverage| |scrutinizer|
 
 Project information
 -------------------
@@ -18,9 +18,6 @@ Project information
 .. |circleci status| image:: https://img.shields.io/circleci/project/github/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}/master.svg
   :target: https://circleci.com/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}/tree/master
   :alt: Circle-CI build status
-.. |quantified code| image:: https://www.quantifiedcode.com/api/v1/project/PROJECT_ID/badge.svg
-  :target: https://www.quantifiedcode.com/app/project/PROJECT_ID
-  :alt: Quantified Code issues
 .. |scrutinizer| image:: https://img.shields.io/scrutinizer/g/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}.svg
   :target: https://scrutinizer-ci.com/g/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}/?branch=master
   :alt: Scrutinizer Code Quality
