@@ -2,45 +2,41 @@
 
 [![CircleCI](https://circleci.com/gh/spyder-ide/spyder-plugin-cookiecutter.svg?style=svg)](https://circleci.com/gh/spyder-ide/spyder-plugin-cookiecutter)
 
-Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter), Spyder Plugin Cookiecutter is a template for jumpstarting [Spyder IDE](https://github.com/spyder-ide/spyder) plugins quickly.
-
-> This is under development, you can use it, but some features are missing
+Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter) :cookie:, Spyder Plugin Cookiecutter is a template for jumpstarting [Spyder IDE](https://github.com/spyder-ide/spyder) :spider_web: plugins quickly.
 
 > We recommend using conda and anaconda when developing a Spyder-IDE plugin.
 
 ## Features
 
-- For Spyder >=3.1
-- Spyder Plugin Structure (plugin.py, gui.py)
-- A functional basic plugin
+- Compatible with Spyder >=3.1 and Spyder 4
+- Follows Spyder Plugin Structure (`plugin.py`, `widgets`, `assets`, `tests`)
+- A functional basic plugin.
 
 ### Repo structure
-- Licence, Manifiest, Contibutors, .gitatributes
-- Readme with bagdes and some instructions.
+- `License.txt`, `MANIFIEST.in`, `CONTRIBUTORS.md` and `.gitatributes`
+- `README.rst` with bagdes and some instructions.
 
 ### Packaging
 
-- requierements.txt
-- conda recipe [under development]
-- setup.py
+- `requirements.txt` file for easy install dependencies for development
+- `setup.py`
+- Recipe files for creating conda package.
 
-### Continuous Integration
+### Testing and Continuous Integration
 
 - pytest configuration, and a basic test
-- appveyor [under development]
-- travis [under development]
-- circle-ci
+- Integration with [Appveyor](https://www.appveyor.com/) for windows testing.
+- Integration with [Circle-CI](https://circleci.com/) for linux testing.
 
 ### Code Checking
 
-- coverage
-- ciocheck
-- scrutinizer
-- quantified code
+- Test Coverage with [Coveralls](https://coveralls.io/) Integration.
+- Integration with [ciocheck](https://github.com/ContinuumIO/ciocheck/) for linting and codestyle checking
+- Integration with [Scrutinizer CI](https://scrutinizer-ci.com/) for Code Quality
 
 ### Repo Managing
 
-- versioneer
+- (Optional) Version managing with  [versioneer](https://github.com/warner/python-versioneer)
 
 
 ## Usage
@@ -76,11 +72,12 @@ github_username [spyder-ide]:
 plugin_name [Demo Plugin]: Reports
 repo_name [spyder-reports]:
 project_name [spyder_reports]:
-description [Plugin for Spyder IDE.]: Spyder Plugin for Markdown reports for Pweave and Stitc
+description [Plugin for Spyder IDE.]: Spyder Plugin for Markdown reports for Pweave
 version [0.1.0]:
 create_config_page [n]:
 use_ciocheck [y]:
 support_python_2 [n]:
+spyder3_compatibility [y]:
 use_versioneer [y]:
 ```
 
