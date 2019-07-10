@@ -1,5 +1,4 @@
 cookiecutter>=1.4.0
-versioneer==0.17
 
 # Testing
 pytest==3.0.5

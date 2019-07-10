@@ -1,1 +1,7 @@
+{%- if cookiecutter.spyder3_compatibility == 'y' -%}
 spyder>=3.1
+{%- else -%}
+spyder>=4.0.0b3
+{%- enfif -%}
+pytest
+pytest-qt

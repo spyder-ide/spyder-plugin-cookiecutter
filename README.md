@@ -8,26 +8,6 @@
 ## Build status
 [![CircleCI](https://circleci.com/gh/spyder-ide/spyder-plugin-cookiecutter.svg?style=svg)](https://circleci.com/gh/spyder-ide/spyder-plugin-cookiecutter)
 
-----
-
-## Important Announcement: Spyder is unfunded!
-
-Since mid November/2017, [Anaconda, Inc](https://www.anaconda.com/) has
-stopped funding Spyder development, after doing it for the past 18
-months. Because of that, development will focus from now on maintaining
-Spyder 3 at a much slower pace than before.
-
-If you want to contribute to maintain Spyder, please consider donating at
-
-https://opencollective.com/spyder
-
-We appreciate all the help you can provide us and can't thank you enough for
-supporting the work of Spyder devs and Spyder development.
-
-If you want to know more about this, please read this
-[page](https://github.com/spyder-ide/spyder/wiki/Anaconda-stopped-funding-Spyder).
-
-----
 
 ## Overview
 
@@ -63,10 +43,6 @@ Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter) :cookie:, Spy
 - Integration with [ciocheck](https://github.com/ContinuumIO/ciocheck/) for linting and codestyle checking
 - Integration with [Scrutinizer CI](https://scrutinizer-ci.com/) for Code Quality
 
-### Repo Managing
-
-- (Optional) Version managing with  [versioneer](https://github.com/warner/python-versioneer)
-
 
 ## Usage
 
@@ -74,12 +50,6 @@ First, get Cookiecutter:
 
 ```
 $ conda install "cookiecutter>=1.4.0"
-```
-
-If you want to use versioneer: (also you need to install git)
-
-```
-$ conda install versioneer
 ```
 
 Now run against the repo:
@@ -107,7 +77,6 @@ create_config_page [n]:
 use_ciocheck [y]:
 support_python_2 [n]:
 spyder3_compatibility [y]:
-use_versioneer [y]:
 ```
 
 ## Testing
