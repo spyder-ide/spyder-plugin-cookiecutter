@@ -26,11 +26,8 @@ def test_default_configuration(cookies, context):
 
     # Test creation of project files
 
-    toplevel_files = ['.github', 'conda.recipe', 'CHANGELOG.md',
-                      'CONTRIBUTORS.md', 'LICENSE.txt', 'MANIFEST.in',
-                      'README.rst', 'RELEASE.md', 'setup.py',
-                      'requirements.txt', '.gitattributes',
-                      '.scrutinizer.yml']
+    toplevel_files = ['MANIFEST.in', 'README.rst', 'setup.py',
+                      'requirements.txt', '.gitattributes']
 
     found_toplevel_files = [f.basename for f in result.project.listdir()]
 
