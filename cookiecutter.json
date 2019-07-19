@@ -10,6 +10,5 @@
   "create_config_page": "n",
   "use_ciocheck": "y",
   "support_python_2": "n",
-  "spyder3_compatibility": "y",
-  "use_versioneer": "n"
+  "spyder3_compatibility": "y"
 }

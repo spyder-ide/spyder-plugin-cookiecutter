@@ -1,7 +1,6 @@
 """
 Does the following:
 
-1. Removes _version file and run versioneer install if use_versioneer == y
 """
 
 from __future__ import print_function
@@ -17,23 +16,6 @@ def remove_file(file_name):
         os.remove(file_name)
 
 
-def remove_version_file():
-    """Removes the _version file if versioneer is going to be used."""
-    file_name = os.path.join(PROJECT_DIRECTORY,
-                             '{{ cookiecutter.project_name }}',
-                             '_version.py')
-    remove_file(file_name)
-
-
-def install_versioneer():
-    """Start versioneer in the repository, this will create
-    versioneer.py and _version.py."""
-    try:
-        call(['versioneer', 'install'])
-    except Exception:
-        print(
-            "versioneer isn't avalaible, please install versioneer and run:\n  $ versioneer install")
-
 def init_git():
     """Start git repository"""
     try:
@@ -42,16 +24,7 @@ def init_git():
         print("git isn't avalaible, please install git and run:\n  $ git init")
 
 
-# 1. Removes _version file and run versioneer install if use_versioneer == y
-
-if '{{ cookiecutter.use_versioneer }}'.lower() == 'y':
-    remove_version_file()
-
-    init_git()
-    install_versioneer()
-
-
-# 2. Moves gitattributes to .gitattributes
+# 1. Moves gitattributes to .gitattributes
 # Having a .gitattributes with wrong syntax (because it has some jinja syntax)
 # cause some annoying warnings
 
@@ -61,7 +34,7 @@ new_gitattributes = os.path.join(PROJECT_DIRECTORY, '.gitattributes')
 os.rename(old_gitattributes, new_gitattributes)
 
 
-# 3. Create empty assets directory
+# 2. Create empty assets directory
 
 assets_dir = os.path.join(PROJECT_DIRECTORY,
                           '{{ cookiecutter.project_name }}',
