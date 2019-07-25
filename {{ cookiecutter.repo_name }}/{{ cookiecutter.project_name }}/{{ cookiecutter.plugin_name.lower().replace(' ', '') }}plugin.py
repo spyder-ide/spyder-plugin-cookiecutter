@@ -10,55 +10,98 @@
 {%- set widget_name = cookiecutter.plugin_name.replace(' ', '') + 'Widget' -%}
 {%- set config_page = cookiecutter.plugin_name.replace(' ', '') + 'ConfigPage' %}
 
+{%- if cookiecutter.graphical_plugin == 'n' %}
 from qtpy.QtWidgets import QVBoxLayout
-
-{% if cookiecutter.spyder3_compatibility == 'y' -%}
+{%- endif %}
+{% if cookiecutter.spyder3_compatibility == 'y' %}
 try:
     from spyder.api.plugins import SpyderPluginWidget
 except ImportError:
     from spyder.plugins import SpyderPluginWidget # Spyder3
     {%- if cookiecutter.create_config_page == 'y' %}
 try:
-    from spyder.api.preferences import
+    from spyder.api.preferences import PluginConfigPage
 except ImportError:
     from spyder.plugins.configdialog import PluginConfigPage # Spyder3
     {%- endif %}
-{% else -%}
+{% else %}
+    {%- if cookiecutter.graphical_plugin == 'y' %}
 from spyder.api.plugins import SpyderPluginWidget
+    {%- else %}
+from spyder.api.plugins import SpyderPlugin
+    {%- endif %}
     {%- if cookiecutter.create_config_page == 'y' %}
 from spyder.api.preferences import PluginConfigPage
-    {%- endif %}
-{%- endif -%}
-
+    {% endif %}
+{%- endif %}
 from .widgets.{{ cookiecutter.plugin_name.lower().replace(' ', '') }}gui import {{ widget_name }}
-{% if cookiecutter.create_config_page == 'y' %}
 
+{% if cookiecutter.create_config_page == 'y' %}
 class {{ config_page }}(PluginConfigPage):
     """{{ cookiecutter.plugin_name }} plugin preferences."""
     pass
 {% endif %}
-
-class {{ cookiecutter.plugin_name.replace(' ', '') }}Plugin(SpyderPluginWidget):
+{%- if cookiecutter.graphical_plugin == 'n' %}
+class {{ cookiecutter.plugin_name.replace(' ', '') }}Plugin(SpyderPlugin):
     """{{ cookiecutter.plugin_name }} plugin."""
     CONF_SECTION = '{{ cookiecutter.plugin_name }}'
-{% if cookiecutter.create_config_page == 'y' %}
+    {% if cookiecutter.create_config_page == 'y' %}
     CONFIGWIDGET_CLASS = {{ config_page }}
-{% else %}
+    {% else %}
     CONFIGWIDGET_CLASS = None
-{% endif %}
-
+    {% endif %}
     def __init__(self, parent=None):
-        SpyderPluginWidget.__init__(self, parent)
-        self.main = parent # Spyder3
+        SpyderPlugin.__init__(self, parent)
 
         # Create widget and add to dockwindow
         self.widget = {{ widget_name }}(self.main)
-        layout = QVBoxLayout()
-        layout.addWidget(self.widget)
-        self.setLayout(layout)
 
         # Initialize plugin
         self.initialize_plugin()
+
+    # --- SpyderPlugin API ----------------------------------------------
+    def get_plugin_title(self):
+        """Return widget title."""
+        return "{{ cookiecutter.plugin_name }}"
+
+    def refresh_plugin(self):
+        """Refresh {{ widget_name }} widget."""
+        pass
+
+    def get_plugin_actions(self):
+        """Return a list of actions related to plugin."""
+        return []
+
+    def register_plugin(self):
+        """Register plugin in Spyder's main window."""
+        pass
+
+    def on_first_registration(self):
+        """Action to be performed on first plugin registration."""
+        pass
+
+    def apply_plugin_settings(self, options):
+        """Apply configuration file's plugin settings."""
+        pass
+{%- else %}
+class {{ cookiecutter.plugin_name.replace(' ', '') }}Plugin(SpyderPluginWidget):
+    """{{ cookiecutter.plugin_name }} plugin."""
+    CONF_SECTION = '{{ cookiecutter.plugin_name }}'
+    {% if cookiecutter.create_config_page == 'y' %}
+    CONFIGWIDGET_CLASS = {{ config_page }}
+    {% else %}
+    CONFIGWIDGET_CLASS = None
+    {% endif %}
+    def __init__(self, parent=None):
+        SpyderPluginWidget.__init__(self, parent)
+
+        # Initialize plugin
+        self.initialize_plugin()
+
+        # Graphical view
+        layout = QVBoxLayout()
+        layout.addWidget(self.widget)
+        self.setLayout(layout)
 
     # --- SpyderPluginWidget API ----------------------------------------------
     def get_plugin_title(self):
@@ -83,8 +126,11 @@ class {{ cookiecutter.plugin_name.replace(' ', '') }}Plugin(SpyderPluginWidget):
 
     def on_first_registration(self):
         """Action to be performed on first plugin registration."""
-        self.main.tabify_plugins(self.main.help, self)
+        # Define where the plugin is going to be tabified next to
+        # As default, it will be tabbed next to the ipython console
+        self.tabify(self.main.ipyconsole)
 
     def apply_plugin_settings(self, options):
         """Apply configuration file's plugin settings."""
         pass
+{%- endif -%}
