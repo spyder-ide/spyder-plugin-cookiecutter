@@ -10,7 +10,7 @@
 {%- set widget_name = cookiecutter.plugin_name.replace(' ', '') + 'Widget' -%}
 {%- set config_page = cookiecutter.plugin_name.replace(' ', '') + 'ConfigPage' %}
 
-{%- if cookiecutter.graphical_plugin == 'n' %}
+{%- if cookiecutter.graphical_plugin != 'n' %}
 from qtpy.QtWidgets import QVBoxLayout
 {%- endif %}
 {% if cookiecutter.spyder3_compatibility == 'y' %}
@@ -51,38 +51,8 @@ class {{ cookiecutter.plugin_name.replace(' ', '') }}Plugin(SpyderPlugin):
     CONFIGWIDGET_CLASS = None
     {% endif %}
     def __init__(self, parent=None):
+        QObject.__init__(self, parent)
         SpyderPlugin.__init__(self, parent)
-
-        # Create widget and add to dockwindow
-        self.widget = {{ widget_name }}(self.main)
-
-        # Initialize plugin
-        self.initialize_plugin()
-
-    # --- SpyderPlugin API ----------------------------------------------
-    def get_plugin_title(self):
-        """Return widget title."""
-        return "{{ cookiecutter.plugin_name }}"
-
-    def refresh_plugin(self):
-        """Refresh {{ widget_name }} widget."""
-        pass
-
-    def get_plugin_actions(self):
-        """Return a list of actions related to plugin."""
-        return []
-
-    def register_plugin(self):
-        """Register plugin in Spyder's main window."""
-        pass
-
-    def on_first_registration(self):
-        """Action to be performed on first plugin registration."""
-        pass
-
-    def apply_plugin_settings(self, options):
-        """Apply configuration file's plugin settings."""
-        pass
 {%- else %}
 class {{ cookiecutter.plugin_name.replace(' ', '') }}Plugin(SpyderPluginWidget):
     """{{ cookiecutter.plugin_name }} plugin."""
@@ -93,10 +63,13 @@ class {{ cookiecutter.plugin_name.replace(' ', '') }}Plugin(SpyderPluginWidget):
     CONFIGWIDGET_CLASS = None
     {% endif %}
     def __init__(self, parent=None):
+        QObject.__init__(self, parent)
         SpyderPluginWidget.__init__(self, parent)
 
+        {% if cookiecutter.spyder3_compatibility == 'y' %}
         # Initialize plugin
         self.initialize_plugin()
+        {% endif %}
 
         # Graphical view
         layout = QVBoxLayout()
@@ -128,7 +101,7 @@ class {{ cookiecutter.plugin_name.replace(' ', '') }}Plugin(SpyderPluginWidget):
         """Action to be performed on first plugin registration."""
         # Define where the plugin is going to be tabified next to
         # As default, it will be tabbed next to the ipython console
-        self.tabify(self.main.ipyconsole)
+        self.tabify(self.main.help)
 
     def apply_plugin_settings(self, options):
         """Apply configuration file's plugin settings."""

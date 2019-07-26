@@ -6,7 +6,6 @@
 # (see LICENSE.txt for details)
 # -----------------------------------------------------------------------------
 """{{ cookiecutter.plugin_name }} Widget."""
-{%- if cookiecutter.graphical_plugin != 'n' -%}
 # Third party imports
 from qtpy.QtWidgets import QWidget
 
@@ -17,4 +16,3 @@ class {{ cookiecutter.plugin_name.replace(' ', '') }}Widget(QWidget):
         QWidget.__init__(self, parent)
 
         self.setWindowTitle("{{ cookiecutter.plugin_name }}")
-{%- endif -%}
