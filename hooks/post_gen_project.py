@@ -5,15 +5,27 @@ Does the following:
 
 from __future__ import print_function
 import os
+import shutil
 from subprocess import call
 
 # Get the root project directory
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 
 
-def remove_file(file_name):
-    if os.path.exists(file_name):
-        os.remove(file_name)
+def remove(filepath):
+    """Remove files or directory given a path."""
+    if os.path.isfile(filepath):
+        os.remove(filepath)
+    elif os.path.isdir(filepath):
+        shutil.rmtree(filepath)
+
+
+create_widget = '{{cookiecutter.graphical_plugin}}' == 'y'
+
+if not create_widget:
+    # Remove the widgets folder if the plugin is not graphical
+    remove(os.path.join(PROJECT_DIRECTORY,
+                        '{{cookiecutter.project_name}}', 'widgets'))
 
 
 def init_git():

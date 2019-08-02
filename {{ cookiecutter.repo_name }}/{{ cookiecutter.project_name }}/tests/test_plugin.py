@@ -16,6 +16,7 @@ import pytest
 from {{ cookiecutter.project_name }}.{{ module_name }} import {{ plugin_name }}
 
 
+{%- if cookiecutter.graphical_plugin == 'y' %}
 @pytest.fixture
 def setup_{{ object_name }}(qtbot):
     """Set up the {{ plugin_name }} plugin."""
@@ -31,7 +32,21 @@ def test_basic_initialization(qtbot):
 
     # Assert that plugin object exist
     assert {{ object_name }} is not None
+{% else %}
+@pytest.fixture
+def setup_{{ object_name }}():
+    """Set up the {{ plugin_name }} plugin."""
+    {{ object_name }} = {{ plugin_name }}(None)
+    return {{ object_name }}
 
+
+def test_basic_initialization():
+    """Test {{ plugin_name }} initialization."""
+    {{ object_name }} = setup_{{ object_name }}()
+
+    # Assert that plugin object exist
+    assert {{ object_name }} is not None
+{% endif %}
 
 if __name__ == "__main__":
     pytest.main()

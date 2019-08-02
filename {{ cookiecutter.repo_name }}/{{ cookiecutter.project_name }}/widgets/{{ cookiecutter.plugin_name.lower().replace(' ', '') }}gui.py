@@ -6,8 +6,9 @@
 # (see LICENSE.txt for details)
 # -----------------------------------------------------------------------------
 """{{ cookiecutter.plugin_name }} Widget."""
-
+# Third party imports
 from qtpy.QtWidgets import QWidget
+
 
 class {{ cookiecutter.plugin_name.replace(' ', '') }}Widget(QWidget):
     """{{ cookiecutter.plugin_name }} widget."""
