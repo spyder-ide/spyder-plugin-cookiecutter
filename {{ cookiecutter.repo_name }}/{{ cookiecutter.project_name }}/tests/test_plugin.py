@@ -15,6 +15,7 @@ import pytest
 # Local imports
 from {{ cookiecutter.project_name }}.{{ module_name }} import {{ plugin_name }}
 
+
 {%- if cookiecutter.graphical_plugin == 'y' %}
 @pytest.fixture
 def setup_{{ object_name }}(qtbot):
