@@ -5,7 +5,7 @@
 # Licensed under the terms of the MIT License
 # (see LICENSE.txt for details)
 # -----------------------------------------------------------------------------
-"""Setup script for {{ cookiecutter.project_name }}."""
+"""Setup script for {{ cookiecutter.python_package_name }}."""
 
 # Standard library imports
 import ast
@@ -29,9 +29,9 @@ REQUIREMENTS = ['spyder']
 
 
 setup(
-    name='{{ cookiecutter.repo_name }}',
+    name='{{ cookiecutter.git_repo_name }}',
     keywords=['Spyder', 'Plugin'],
-    url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}',
+    url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.git_repo_name }}',
     license='MIT',
     author='{{ cookiecutter.author }}',
     author_email='{{ cookiecutter.email }}',

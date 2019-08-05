@@ -13,7 +13,7 @@
 import pytest
 
 # Local imports
-from {{ cookiecutter.project_name }}.{{ module_name }} import {{ plugin_name }}
+from {{ cookiecutter.python_package_name }}.{{ module_name }} import {{ plugin_name }}
 
 
 {%- if cookiecutter.graphical_plugin == 'y' %}

@@ -10,8 +10,8 @@ def context():
         'email': 'admin@spyder-ide.org',
         'github_username': 'spyder-ide',
         'plugin_name': 'Demo',
-        'repo_name': 'spyder-demo',
-        'project_name': 'spyder_demo',
+        'git_repo_name': 'spyder-demo',
+        'python_package_name': 'spyder_demo',
         'description': 'Plugin for Spyder IDE.',
         'version': '0.1.0',
     }
@@ -24,8 +24,8 @@ def non_graphical():
         'email': 'admin@spyder-ide.org',
         'github_username': 'spyder-ide',
         'plugin_name': 'Demo-nongraphic',
-        'repo_name': 'spyder-demo-nongraphic',
-        'project_name': 'spyder_demo_nongraphic',
+        'git_repo_name': 'spyder-demo-nongraphic',
+        'python_package_name': 'spyder_demo_nongraphic',
         'description': 'Plugin for Spyder IDE.',
         'version': '0.1.0',
         'graphical_plugin': 'n'
@@ -36,7 +36,7 @@ def test_default_configuration(cookies, context):
     result = cookies.bake(extra_context=context)
     assert result.exit_code == 0
     assert result.exception is None
-    assert result.project.basename == context['repo_name']
+    assert result.project.basename == context['git_repo_name']
     assert result.project.isdir()
 
     # Test creation of project files
@@ -54,7 +54,7 @@ def test_default_configuration(cookies, context):
     project_files = ['widgets', 'assets', 'demoplugin.py', '_version.py',
                      '__init__.py', 'tests']
 
-    project_dir = result.project.join(context['project_name'])
+    project_dir = result.project.join(context['python_package_name'])
     found_project_files = [f.basename for f in project_dir.listdir()]
 
     for path in project_files:
@@ -66,7 +66,7 @@ def test_non_graphical_configuration(cookies, non_graphical):
     result = cookies.bake(extra_context=non_graphical)
     assert result.exit_code == 0
     assert result.exception is None
-    assert result.project.basename == non_graphical['repo_name']
+    assert result.project.basename == non_graphical['git_repo_name']
     assert result.project.isdir()
 
     # Test creation of project files
@@ -84,7 +84,7 @@ def test_non_graphical_configuration(cookies, non_graphical):
     project_files = ['assets', 'demo-nongraphicplugin.py', '_version.py',
                      '__init__.py', 'tests']
 
-    project_dir = result.project.join(non_graphical['project_name'])
+    project_dir = result.project.join(non_graphical['python_package_name'])
     found_project_files = [f.basename for f in project_dir.listdir()]
 
     for path in project_files:

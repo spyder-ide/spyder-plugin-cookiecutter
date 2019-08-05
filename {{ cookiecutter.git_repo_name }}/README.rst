@@ -12,13 +12,13 @@ Using pip
 
 ::
 
-pip install {{ cookiecutter.project_name }}
+pip install {{ cookiecutter.python_package_name }}
 
 Using conda
 
 ::
 
-conda install {{ cookiecutter.project_name }} -c spyder-ide
+conda install {{ cookiecutter.python_package_name }} -c spyder-ide
 
 Usage
 -----
