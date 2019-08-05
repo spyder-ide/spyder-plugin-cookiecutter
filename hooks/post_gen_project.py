@@ -5,6 +5,7 @@ Does the following:
 
 from __future__ import print_function
 import os
+import sys
 import shutil
 from subprocess import call
 
@@ -25,7 +26,15 @@ create_widget = '{{cookiecutter.graphical_plugin}}' == 'y'
 if not create_widget:
     # Remove the widgets folder if the plugin is not graphical
     remove(os.path.join(PROJECT_DIRECTORY,
-                        '{{cookiecutter.project_name}}', 'widgets'))
+                        '{{cookiecutter.python_package_name}}', 'widgets'))
+
+
+valid_name = '{{cookiecutter.python_package_name}}'.startswith('spyder_')
+
+if not valid_name:
+    print("Python package names for third-party Spyder plugins must start"
+          "with spyder_")
+    sys.exit(1)
 
 
 def init_git():
@@ -49,7 +58,7 @@ os.rename(old_gitattributes, new_gitattributes)
 # 2. Create empty assets directory
 
 assets_dir = os.path.join(PROJECT_DIRECTORY,
-                          '{{ cookiecutter.project_name }}',
+                          '{{ cookiecutter.python_package_name }}',
                           'assets')
 
 os.mkdir(assets_dir)
