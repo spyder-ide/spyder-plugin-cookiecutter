@@ -5,6 +5,7 @@ Does the following:
 
 from __future__ import print_function
 import os
+import sys
 import shutil
 from subprocess import call
 
@@ -31,7 +32,9 @@ if not create_widget:
 valid_name = '{{cookiecutter.python_package_name}}'.startswith('spyder_')
 
 if not valid_name:
-    raise ValueError('Third party plugins name should start with spyder_')
+    print("Python package names for third-party Spyder plugins must start"
+          "with spyder_")
+    sys.exit(1)
 
 
 def init_git():
